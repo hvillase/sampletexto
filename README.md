@@ -1,2 +1,2 @@
-# sampletexto
-Reading samples in SuperCollider
+# SampleTexto
+Reading samples in SuperCollider.
