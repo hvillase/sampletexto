@@ -1,4 +1,14 @@
-a = SampleTexto.new // constructor
-a.sample // llama directorio con ruta defult /"tecnotexto"/
-a.sample(path: "/sonotexto/") // llama directorio distinto
-a.sampleDictionary // para ver lo que hay adentro del directorio
+s.boot
+
+p = SampleTexto.new // constructor
+p.sampleDictionary // para ver lo que hay adentro del directorio
+p.sampleDictionary[\smp][5].play
+p.sampleDictionary[\smp][0].plot
+
+// deprecated
+p.sample // llama directorio con ruta defult /"sampletexto"/
+
+// accedo a directorio distinto
+p.init(path: "/sonotexto/")
+
+s.quit
