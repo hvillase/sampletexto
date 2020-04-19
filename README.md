@@ -4,11 +4,11 @@ Reading samples by index. This is a very experimental class. You can just read a
 ## Preparing SampleTexto
 1 Download or clone the folder of SampleTexto.
 
-2 Put it in you extensions.
+2 Put it in you SuperCollider Extensions folder.
 
 3 Create a folder in SuperCollider Recordings folder and name it *sampletexto*.
 
-4 Put you samples in this folder.
+4 Put your samples in this folder.
 
 ## Start SampleTexto
 ```
