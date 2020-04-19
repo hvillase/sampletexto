@@ -8,12 +8,15 @@ Reading samples by index. This is a very experimental class. You can just read a
 
 3 Create a folder in SuperCollider Recordings folder and name it *sampletexto*.
 
+4 Put you samples in this folder.
+
 ## Start SampleTexto
 ```
 r = SampleTexto.new
 ```
 ## Test SampleTexto
 ```
-r.sampleDictionary
-r.sampleDictionary[\smp][0].play
+r.sampleDictionary // to see the samples in your folder
+r.sampleDictionary[\smp][0].play // to play the first sample in you folder; change the number to acces different index.
+r.sampleDictionary[\smp][0].plot // to see the waveform of your sample.
 ```
