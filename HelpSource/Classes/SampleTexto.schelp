@@ -1,0 +1,38 @@
+TITLE:: SampleTexto
+summary:: Read sound samples by index.
+categories:: Undocumented classes
+related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff
+
+DESCRIPTION::
+_put_long_description_here_
+
+
+First code examples:
+
+code::
+_some_example_code_
+::
+
+CLASSMETHODS::
+
+METHOD:: new
+
+
+INSTANCEMETHODS::
+
+METHOD:: init
+argument:: server
+argument:: path
+
+METHOD:: st
+argument:: num: index number of the sample in the folder.
+
+METHOD:: sampleDictionary
+
+
+EXAMPLES::
+
+code::
+a = SampleTexto.new;
+a.st(4).play;
+::
