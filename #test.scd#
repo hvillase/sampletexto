@@ -1,11 +1,11 @@
 s.boot;
 
 // poner volumen
-p = SampleTexto.new // constructor
-p.st(2)
-p.sampleDictionary // to see Directory contents
-p.init(path: "/sonotexto/") // to access a diferente Directory in your Recordings
-p.st(106).play // accede al indice de sampleo. Tengo acceso a él con ^this
+t = SampleTexto.new // constructor
+t.st(2)
+t.sampleDictionary // to see Directory contents
+t.init(path: "/home/hvillase/Escritorio/MIRLCa/") // to access a diferente Directory in your Recordings
+t.st(106).play // accede al indice de sampleo. Tengo acceso a él con ^this
 p.st(106).plot
 p.st(106).normalize.play // es Buffer encapsulado en una función {Buffer.read}
 p.st(106).numChannels
