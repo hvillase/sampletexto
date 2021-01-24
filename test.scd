@@ -1,52 +1,49 @@
 s.boot;
 
-// poner volumen
 p = SampleTexto.new // constructor
-p.st(2)
-p.sampleDictionary // to see Directory contents
-p.init(path: "/sonotexto/") // to access a diferente Directory in your Recordings
-p.st(106).play // accede al indice de sampleo. Tengo acceso a él con ^this
-p.st(106).plot
-p.st(106).normalize.play // es Buffer encapsulado en una función {Buffer.read}
-p.st(106).numChannels
-p.st(106).normalize // normaliza los valores del buffer
+// Method 1: read sounds into folder of you Recordings path, avoid yo include other type of archives
+p.st1(2)
+p.sampleDictionary1 // to see Directory contents
+p.init(pathRec: "/sonotexto/") // to change Directory into your Recordings folder
+p.st1(106).play;
+p.st1(106).plot; // to see the sound
+p.st1(106).numChannels; // to se number of channels (mono:1, stereo: 2)
 
-// another alternative to access sounds.
-p.sampleDictionary[\smp][104].plot
-p.sampleDictionary[\smp][104].normalize.play // estoy leyendo los métodos de instancia de Buffer.play. Lo de arriba son Buffer.read accedo a ellos a través de Dictionary
 
-// Ndef test
-Ndef(\ce1).stop.quant_(0);
+// Method 2: read sounds everywhere, and the folder can contain other type of archives as text.
+p.init(path: "/home/your_path/*"); // it is important to include * at end of the path
+p.st2(0).play; // play the first sound archive in the folder
 
-p.st(8).normalize
-p.st(8).play
+// Ndef test with reading Method 1
+Ndef(\ce1).play;
+Ndef(\ce1).stop;
 
-Ndef(\ce1, {var num = 8; PlayBuf.ar(p.st(num).numChannels, p.st(num), rate: 1, trigger: Impulse.kr([2, 4]), startPos: p.st(num).numFrames/4, loop: 0, doneAction: 2)})
+Ndef(\ce1, {var num1 = 8; PlayBuf.ar(p.st1(num1).numChannels, p.st1(num1), rate: 1, trigger: Impulse.kr([2, 4]), startPos: p.st1(num1).numFrames/4, loop: 0, doneAction: 2)});
 
-// prueba con Tdef
-u = Pseq([16, 8, 32], inf).asStream
+// Tdef test
+u = Pseq([16, 8, 32], inf).asStream;
 
 (
 Tdef(\ce, {
 loop{
 	1.do{
-		{var num = rrand(66, 68);
-		Out.ar(0, PlayBuf.ar(p.st(num).numChannels,
-		bufnum: p.st(num).bufnum,
+		{var num1 = rrand(66, 68);
+		Out.ar(0, PlayBuf.ar(p.st1(num1).numChannels,
+		bufnum: p.st1(num1).bufnum,
 		rate: 1,
-		startPos: p.st(num).numFrames/u.next,
+		startPos: p.st1(num1).numFrames/u.next,
 		doneAction: 2) * EnvGen.kr(Env([0,1,1,0],[1, 6, 1])) * 1
 		)}.play; 9.wait
 };
 	2.do{
-		{var num = rrand(75, 80);
-		Out.ar(0, PlayBuf.ar(p.st(num).numChannels,
-		bufnum: p.st(num).bufnum,
+		{var num1 = rrand(75, 80);
+		Out.ar(0, PlayBuf.ar(p.st1(num1).numChannels,
+		bufnum: p.st1(num1).bufnum,
 		rate: 1,
-		startPos: p.st(num).numFrames/2.1,
+		startPos: p.st1(num1).numFrames/2.1,
 		doneAction: 2) * 1
 		)}.play; 0.25.wait
 	};
 }
-}).stop.quant_(0)
+}).stop; // switch to play
 )

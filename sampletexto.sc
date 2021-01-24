@@ -1,7 +1,7 @@
 //===================================//
 // SampleTexto: read sounds by index //
 // Author: Hernani Villasenor        //
-// Colaboration: Sam Roig            //
+// Collaboration: Sam Roig            //
 //===================================//
 
 SampleTexto {
@@ -14,17 +14,17 @@ SampleTexto {
 	}
 
 	init {|server, pathRec = "/sampletexto", path = "/home"|
-// lee folder dentro del directorio Recordings
+		// versión original: lee carpetas del directorio Recordings (read folder of Recordings path)
 		sampleDictionary1 = Dictionary.new;
-		sampleDictionary1.add(\smp -> PathName(Platform.recordingsDir +/+ pathRec).entries.collect({arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath)}));
+		sampleDictionary1.add(\smp1 -> PathName(Platform.recordingsDir +/+ pathRec).entries.collect({arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath)}));
 
-// lee folder en cualquier ruta, línea implementada por Sam Roig
+		// lee carpetas en cualquier ruta, línea implementada por Sam Roig (read any folder, just audio files)
 		sampleDictionary2 = Dictionary.new;
 		sampleDictionary2.add(\smp2 -> SoundFile.collectIntoBuffers(path: path, server: Server.default));
 	}
 
-	st {|num = 0|
-		^this.sampleDictionary1[\smp][num]; // para acceder con play desde afuera es importante el ^
+	st1 {|num1 = 0|
+		^this.sampleDictionary1[\smp1][num1]; // para acceder con play desde afuera es importante el ^
 	}
 
 	st2 {|num2 = 0|
