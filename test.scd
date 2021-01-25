@@ -2,19 +2,21 @@ s.boot;
 
 p = SampleTexto.new // constructor
 // Method 1: read sounds into folder of you Recordings path, avoid yo include other type of archives
-p.st1(2)
+
 p.sampleDictionary1 // to see Directory contents
 p.init(pathRec: "/sonotexto/") // to change Directory into your Recordings folder
-p.st1(106).play;
-p.st1(106).plot; // to see the sound
-p.st1(106).numChannels; // to se number of channels (mono:1, stereo: 2)
-
+p.st1(0).play;
+p.st1(0).plot; // to see the sound
+p.st1(0).numChannels; // to se number of channels (mono:1, stereo: 2)
+p.info(0); // gives you number of samples in </Recording/your_folder_path/>
 
 // Method 2: read sounds everywhere, and the folder can contain other type of archives as text.
-p.init(path: "/home/your_path/*"); // it is important to include * at end of the path
-p.st2(0).play; // play the first sound archive in the folder
+q = SampleTexto.new;
+q.init(path: "/home/hvillase/Escritorio/MIRLCa/*"); // it is important to include * at end of the path
+q.st2(0).play; // play the first sound archive in the folder
+q.info(1) // gives you the number of archives, both sound and other type, in </your_folder_path/>
 
-// Ndef test with reading Method 1
+// Ndef test with reading Method 1 (</Recordings/your_folder/>)
 Ndef(\ce1).play;
 Ndef(\ce1).stop;
 

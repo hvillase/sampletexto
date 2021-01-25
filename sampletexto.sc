@@ -10,10 +10,10 @@ SampleTexto {
 	var <sampleDictionary2;
 
 	*new {
-		^super.new.init
+		^super.new.init;
 	}
 
-	init {|server, pathRec = "/sampletexto", path = "/home"|
+	init {|server, pathRec = "/sampletexto/", path = "/home/"|
 		// versión original: lee carpetas del directorio Recordings (read folder of Recordings path)
 		sampleDictionary1 = Dictionary.new;
 		sampleDictionary1.add(\smp1 -> PathName(Platform.recordingsDir +/+ pathRec).entries.collect({arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath)}));
@@ -29,5 +29,10 @@ SampleTexto {
 
 	st2 {|num2 = 0|
 		^this.sampleDictionary2[\smp2][num2]; // para acceder con play desde afuera es importante el ^
+	}
+	// nos dice la cantidad de archivos dentro de la carpeta (number of samples in folder)
+	info {|st = 0|
+		if(st == 0,
+			{^this.sampleDictionary1[\smp1].size -1}, {^this.sampleDictionary2[\smp2].size -1})
 	}
 }
