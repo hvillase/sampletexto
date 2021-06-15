@@ -16,11 +16,11 @@ r = SampleTexto.new
 ```
 ## Test SampleTexto
 ```
-r.sampleDictionary1 // to see the samples in your folder
-r.st1(0).play // to play the first sample in you folder; change the number to acces different index.
-r.st1(1).plot // to see the waveform of your sample.
+r.sampleDictionary // to see the samples in your folder
+r.st(0).play // to play the first sample in your folder; change the number to access different index.
+r.st(0).plot // to see the waveform of your sample.
 ```
 ## Change folder path
 ```
-r.init(pathRec: "/name_of_your_folder/");
+r.init(path: "/name_of_your_Recordings_path_folder/");
 ```
