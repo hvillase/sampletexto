@@ -1,38 +1,42 @@
-//===================================//
-// SampleTexto: read sounds by index //
-// Author: Hernani Villasenor        //
-// Collaboration: Sam Roig            //
-//===================================//
-
 SampleTexto {
 
-	var <sampleDictionary1;
-	var <sampleDictionary2;
+	var <sampleDictionary; // para cargar sonidos
+	var <sampleMonoDictionary; // para seleccionar sonidos mono
+	var <sampleStereoDictionary; // para seleccionar sonidos estereo
 
 	*new {
 		^super.new.init;
 	}
 
-	init {|server, pathRec = "/sampletexto/", path = "/home/"|
-		// versión original: lee carpetas del directorio Recordings (read folder of Recordings path)
-		sampleDictionary1 = Dictionary.new;
-		sampleDictionary1.add(\smp1 -> PathName(Platform.recordingsDir +/+ pathRec).entries.collect({arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath)}));
+	// lee carpetas del directorio Recordings (read folder of Recordings path)
+	init {|server, path = "/sampletexto/"|
 
-		// lee carpetas en cualquier ruta, línea implementada por Sam Roig (read any folder, just audio files)
-		sampleDictionary2 = Dictionary.new;
-		sampleDictionary2.add(\smp2 -> SoundFile.collectIntoBuffers(path: path, server: Server.default));
+		sampleDictionary = Dictionary.new;
+
+		sampleDictionary.add(\smp -> PathName(Platform.recordingsDir +/+ path).entries.collect({arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath)}));
 	}
 
-	st1 {|num1 = 0|
-		^this.sampleDictionary1[\smp1][num1]; // para acceder con play desde afuera es importante el ^
+	stsel {
+		sampleMonoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 1};
+		sampleStereoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 2};
 	}
 
-	st2 {|num2 = 0|
-		^this.sampleDictionary2[\smp2][num2]; // para acceder con play desde afuera es importante el ^
+	st {|num1 = 0|
+		^this.sampleDictionary[\smp][num1];
 	}
-	// nos dice la cantidad de archivos dentro de la carpeta (number of samples in folder)
-	info {|st = 0|
-		if(st == 0,
-			{^this.sampleDictionary1[\smp1].size -1}, {^this.sampleDictionary2[\smp2].size -1})
+
+	stm {|num2 = 0|
+		^this.sampleMonoDictionary[num2];
+	}
+
+	sts {|num3 = 0|
+		^this.sampleStereoDictionary[num3];
+	}
+
+	// cantidad de sonidos en la carpeta (number of samples in folder)
+	info {
+		("total: " ++ sampleDictionary[\smp].size).postln;
+		("mono: " ++ sampleMonoDictionary.size).postln;
+		("stereo: " ++ sampleStereoDictionary.size).postln;
 	}
 }
