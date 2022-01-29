@@ -4,13 +4,15 @@ categories:: Undocumented classes
 related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff
 
 DESCRIPTION::
-Reads the sound files of a folder by index. By default reads a folder called sonotexto.
+Reads the sound files of a folder by its index. By default reads the folder called <sonotexto>.
 
 
 First code examples:
 
 code::
-_some_example_code_
+a = SampleTexto.new;
+a.init(path: "/choose_your_sound_path/");
+a.st(4).play;
 ::
 
 CLASSMETHODS::
@@ -25,7 +27,7 @@ argument:: server
 argument:: path
 
 METHOD:: st
-argument:: num: index number of the sample in the folder.
+argument:: num: index number of the sound in the folder.
 
 METHOD:: sampleDictionary
 
@@ -34,5 +36,7 @@ EXAMPLES::
 
 code::
 a = SampleTexto.new;
+a.init(path: "/path/");
 a.st(4).play;
+a.stsel;
 ::
