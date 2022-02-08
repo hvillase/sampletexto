@@ -1,5 +1,7 @@
 s.boot;
 
+SampleTexto.help;
+
 p = SampleTexto.new // constructor
 // Method 1: read sounds into folder of you Recordings path, avoid yo include other type of archives
 
