@@ -13,12 +13,12 @@ SampleTexto {
 
 		sampleDictionary = Dictionary.new;
 
-		sampleDictionary.add(\smp -> PathName(Platform.recordingsDir +/+ path).entries.collect({ arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath) }));
+		sampleDictionary.add(\smp -> PathName(Platform.recordingsDir +/+ path).entries.collect({ |grabacion| Buffer.read(server ? Server.default, grabacion.fullPath) }));
 	}
 
 	stsel {
-		sampleMonoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 1 };
-		sampleStereoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 2 };
+		sampleMonoDictionary = sampleDictionary[\smp].select{ |item| item.numChannels == 1 };
+		sampleStereoDictionary = sampleDictionary[\smp].select{ |item| item.numChannels == 2 };
 	}
 
 	st { |num1 = 0|
