@@ -9,27 +9,27 @@ SampleTexto {
 	}
 
 	// lee carpetas del directorio Recordings (read folder of Recordings path)
-	init {|server, path = "/sampletexto/"|
+	init { |server, path = "/sampletexto/"|
 
 		sampleDictionary = Dictionary.new;
 
-		sampleDictionary.add(\smp -> PathName(Platform.recordingsDir +/+ path).entries.collect({arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath)}));
+		sampleDictionary.add(\smp -> PathName(Platform.recordingsDir +/+ path).entries.collect({ arg grabacion; Buffer.read(server ? Server.default, grabacion.fullPath) }));
 	}
 
 	stsel {
-		sampleMonoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 1};
-		sampleStereoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 2};
+		sampleMonoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 1 };
+		sampleStereoDictionary = sampleDictionary[\smp].select{arg item; item.numChannels == 2 };
 	}
 
-	st {|num1 = 0|
+	st { |num1 = 0|
 		^this.sampleDictionary[\smp][num1];
 	}
 
-	stm {|num2 = 0|
+	stm { |num2 = 0|
 		^this.sampleMonoDictionary[num2];
 	}
 
-	sts {|num3 = 0|
+	sts { |num3 = 0|
 		^this.sampleStereoDictionary[num3];
 	}
 
