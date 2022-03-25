@@ -38,5 +38,9 @@ code::
 a = SampleTexto.new;
 a.init(path: "/path/");
 a.st(4).play;
+
 a.stsel;
+a.stm(1).play;
+a.sts(1).play;
+a.info;
 ::

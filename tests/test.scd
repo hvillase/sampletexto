@@ -2,11 +2,12 @@ s.boot;
 
 SampleTexto.help;
 
-p = SampleTexto.new // constructor
+p = SampleTexto.new; // constructor
+
 // Method 1: read sounds into folder of you Recordings path, avoid yo include other type of archives
 
-p.sampleDictionary // to see Directory contents
-p.init(path: "/sonotexto/") // to change Directory into your Recordings folder
+p.sampleDictionary; // to see Directory contents
+p.init(path: "/sonotexto/"); // to change Directory into your Recordings folder
 p.st(0).play; // text sound in index 0, yo can change the index to listening other sounds
 p.st(0).plot; // to see the sound
 p.st(0).numChannels; // to se number of channels (mono:1, stereo: 2)
