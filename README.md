@@ -26,5 +26,5 @@ r.info // says how many sounds are in total
 ```
 ## Change folder path
 ```
-r.init(path: "/name_of_your_Recordings_path_folder/");
+r.init(path: "/path/to/Recordings/your_folder/");
 ```
