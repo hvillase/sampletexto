@@ -4,9 +4,9 @@ Reading samples by index. This is a very experimental class. You can read an aud
 ## Preparing SampleTexto
 1 Download or clone the folder of SampleTexto.
 
-2 Put it in you SuperCollider Extensions folder.
+2 Put it in your SuperCollider Extensions folder.
 
-3 Create a folder in SuperCollider Recordings folder and name it *sampletexto*.
+3 Create a folder in the SuperCollider Recordings folder and name it *sampletexto*.
 
 4 Put your samples in this folder.
 
