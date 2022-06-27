@@ -13,6 +13,12 @@ code::
 a = SampleTexto.new;
 a.init(path: "/choose_your_sound_path/");
 a.st(4).play;
+
+// Divide by stereo or mono files
+a.stsel;
+a.stm(0).play;
+a.sts(0).play;
+a.info;
 ::
 
 CLASSMETHODS::
