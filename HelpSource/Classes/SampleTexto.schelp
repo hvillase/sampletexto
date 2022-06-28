@@ -4,21 +4,21 @@ categories:: Undocumented classes
 related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff
 
 DESCRIPTION::
-Reads the sound files of a folder by its index. By default reads the folder called <sonotexto>.
+Reads the sound files of a folder by its index. By default reads the folder called <sampletexto>.
 
 
 First code examples:
 
 code::
-a = SampleTexto.new;
-a.init(path: "/choose_your_sound_path/");
-a.st(4).play;
+~a=SampleTexto.new;
+~a.init(path: "/choose_your_sound_path/");
+~a.st(4).play;
 
 // Divide by stereo or mono files
-a.stsel;
-a.stm(0).play;
-a.sts(0).play;
-a.info;
+~a.stsel;
+~a.stm(0).play;
+~a.sts(0).play;
+~a.info;
 ::
 
 CLASSMETHODS::
