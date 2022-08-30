@@ -19,6 +19,8 @@ r.st(0).plot;
 r.stsel;
 r.stm(0);
 r.sts(0);
+r.monosynth();
+r.stereosynth();
 r.info;
 
 ```

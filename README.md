@@ -22,6 +22,8 @@ r.st(0).plot // to see the waveform of your sample.
 r.stsel // to create one dictionarie for mono sounds and one for stereo sounds
 r.stm(0).play // to play the first mono sound
 r.sts(0).play // to play the first stereo sound
+r.monosynth(); // to create one SynthDef for each mono audio file
+r.stereosynth(); // to create one SynthDef for each stereo audio file
 r.info // says how many sounds are in total
 ```
 ## Change folder path
