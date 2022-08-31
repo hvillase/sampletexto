@@ -30,3 +30,29 @@ r.info // says how many sounds are in total
 ```
 r.init(path: "/path/to/Recordings/your_folder/");
 ```
+## Example with Synth + Pdef
+```
+s.boot;
+
+o=SampleTexto.new;
+o.stsel;
+o.info;
+o.stereosynth();
+
+Synth(\st0);
+Synth(\st2);
+Synth(\st4);
+
+(
+Pdef(\sampletexto, Ppar([
+	Pbind(\instrument, \st0,
+		\dur, 1),
+	Pbind(\instrument, \st2,
+		\dur, 0.5),
+	Pbind(\instrument, \st4,
+		\dur, 2
+	)
+])
+).play
+)
+```
