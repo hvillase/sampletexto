@@ -56,3 +56,24 @@ Pdef(\sampletexto, Ppar([
 ).play
 )
 ```
+## SynthDef arguments
+```
+// mono synth
+rate: 1      // pitch rate
+sp: 0        // start position
+at: 0.001    // atack
+sus: 1       // sustain
+rel: 0.001   // release
+pan: 0       // stereo pan
+amp: 1       // volume
+out: 0       // output (L)
+
+// stereo synth
+rate: 1      // pitch rate
+sp: 0        // start position
+at: 0.001    // atack
+sus: 1       // sustain
+rel: 0.001   // release
+amp: 1       // volume
+out: 0       // output (L + R)
+```

@@ -55,4 +55,25 @@ Pdef(\sampletexto, Ppar([
 ).play
 )
 ```
+## Argumentos del SynthDef
+```
+// mono synth
+rate: 1      // altura
+sp: 0        // posición de lectura
+at: 0.001    // ataque
+sus: 1       // sostenimiento
+rel: 0.001   // relajamiento
+pan: 0       // panorama estéreo
+amp: 1       // volumen
+out: 0       // salida (Izquierda)
+
+// mono synth
+rate: 1      // altura
+sp: 0        // posición de lectura
+at: 0.001    // ataque
+sus: 1       // sostenimiento
+rel: 0.001   // relajamiento
+amp: 1       // volumen
+out: 0       // salida (Izquierda + Derecha)
+```
 
