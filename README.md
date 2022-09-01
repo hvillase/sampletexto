@@ -39,17 +39,17 @@ o.stsel;
 o.info;
 o.stereosynth();
 
-Synth(\st0);
-Synth(\st2);
-Synth(\st4);
+Synth(\s0);
+Synth(\s2);
+Synth(\s4);
 
 (
 Pdef(\sampletexto, Ppar([
-	Pbind(\instrument, \st0,
+	Pbind(\instrument, \s0,
 		\dur, 1),
-	Pbind(\instrument, \st2,
+	Pbind(\instrument, \s2,
 		\dur, 0.5),
-	Pbind(\instrument, \st4,
+	Pbind(\instrument, \s4,
 		\dur, 2
 	)
 ])
