@@ -45,7 +45,7 @@ SampleTexto {
 	monosynth {|num = (sampleMonoDictionary.size - 1)|
 			(0..num).do{|it|
 				this.sampleMonoDictionary[it].normalize;
-				SynthDef("mn%".format(it), {|rate=1, sp=0, at=0.001, sus=1, rel=0.001, pan=0, amp=1, out=0|
+				SynthDef("m%".format(it), {|rate=1, sp=0, at=0.001, sus=1, rel=0.001, pan=0, amp=1, out=0|
 					var son, hpf, pne, env;
 					son=PlayBuf.ar(1, this.sampleMonoDictionary[it].bufnum, rate, 1, sp * this.sampleDictionary[\smp][it].numFrames, 0);
 					hpf=HPF.ar(son, 20);
@@ -60,7 +60,7 @@ SampleTexto {
 	stereosynth {|num = (sampleStereoDictionary.size - 1)|
 			(0..num).do{|it|
 				this.sampleStereoDictionary[it].normalize;
-				SynthDef("st%".format(it), {|rate=1, sp=0, at=0.001, sus=1, rel=0.001, amp=1, out=0|
+				SynthDef("s%".format(it), {|rate=1, sp=0, at=0.001, sus=1, rel=0.001, amp=1, out=0|
 					var son, hpf, env;
 				son=PlayBuf.ar(2, this.sampleStereoDictionary[it].bufnum, rate, 1, sp * this.sampleStereoDictionary[it].numFrames, 0);
 					hpf=HPF.ar(son, 20);
