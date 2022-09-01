@@ -57,7 +57,7 @@ Pdef(\sampletexto, Ppar([
 ```
 ## Argumentos del SynthDef
 ```
-// mono synth
+// synth Monoaural
 rate: 1      // altura
 sp: 0        // posición de lectura
 at: 0.001    // ataque
@@ -67,7 +67,7 @@ pan: 0       // panorama estéreo
 amp: 1       // volumen
 out: 0       // salida (Izquierda)
 
-// mono synth
+// synth Estéreo
 rate: 1      // altura
 sp: 0        // posición de lectura
 at: 0.001    // ataque
