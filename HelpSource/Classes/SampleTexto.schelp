@@ -19,6 +19,10 @@ code::
 ~a.stm(0).play;
 ~a.sts(0).play;
 ~a.info;
+
+// create mono and stereo synths
+~a.monosynth(2);
+~a.stereosynth(2);
 ::
 
 CLASSMETHODS::
@@ -49,4 +53,7 @@ code::
 ~a.stm(1).play;
 ~a.sts(1).play;
 ~a.info;
+
+~a.monosynth(); // the argument is number of mono audiofiles in your folder -1
+~a.stereosynth(); // the argument is number of stereo audiofiles in your folder -1
 ::
