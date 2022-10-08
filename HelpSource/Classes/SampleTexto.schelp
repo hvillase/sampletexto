@@ -24,12 +24,14 @@ code::
 ~a.monosynth(2);
 ~a.stereosynth(2);
 
-
 Synth(\m1);
 Synth(\s1);
 
-// Synth parameters
-rate, sp, at, sus, rel, pan, amp, out
+// Mono Synth parameters
+[\rate, 1, \sp, 0, \at, 0.001, \sus, 1, \rel, 0.001, \pan, 0, \amp, 1, \out, 0]
+
+// Stereo Synth parameters
+[\rate, 1, \sp, 0, \at, 0.001, \sus, 1, \rel, 0.001, \amp, 1, \out, 0]
 ::
 
 CLASSMETHODS::
@@ -61,6 +63,14 @@ code::
 ~a.sts(1).play;
 ~a.info;
 
-~a.monosynth(); // the argument is number of mono audiofiles in your folder -1
-~a.stereosynth(); // the argument is number of stereo audiofiles in your folder -1
+// the argument is number of mono audiofiles in your folder -1
+~a.monosynth();
+// the argument is number of stereo audiofiles in your folder -1
+~a.stereosynth();
+
+// sustain multiplies the duration of the audio file. 1 means the whole archive duration.
+Synth(\m1, [\sus, 1]);
+
+// 0.5 means the half of the archive duration from zero to duration * 0.5.
+Synth(\m1, [\sus, 0.5]);
 ::
