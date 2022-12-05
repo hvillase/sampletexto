@@ -54,6 +54,7 @@ SampleTexto {
 					Out.ar(out, pne * env);
 				}).add;
 			}
+		^"monosynths";
 	}
 
 	// Create stereo synths from stereo Dictionary (crear Synths del diccionario estéreo)
@@ -68,6 +69,7 @@ SampleTexto {
 					Out.ar(out, (son * env) * amp);
 				}).add;
 			}
+		^"stereosynths"
 	}
 
 	// Specify the number of samples in a folder (cantidad de sonidos en la carpeta)

@@ -12,7 +12,7 @@ p.st(0).play; // text sound in index 0, yo can change the index to listening oth
 p.st(0).plot; // to see the sound
 p.st(0).numChannels; // to se number of channels (mono:1, stereo: 2)
 
-p.stsel; // to create a dictionary for mono and stereo files
+p.stsel; // to create a Dictionary for mono and stereo files
 p.stm(0).play; // to play mono sounds
 p.sts(0).play; // to play stereo sounds
 p.info; // gives you the number of samples in </Recording/your_folder_path/>
