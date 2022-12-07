@@ -38,7 +38,13 @@ Synth(\s1);
 \out, 0]
 
 // Stereo Synth arguments
-[\rate, 1, \sp, 0, \at, 0.001, \sus, 1, \rel, 0.001, \amp, 1, \out, 0]
+[\rate, 1,
+\sp, 0,
+\at, 0.001,
+\sus, 1,
+\rel, 0.001,
+\amp, 1,
+\out, 0]
 ::
 
 CLASSMETHODS::
